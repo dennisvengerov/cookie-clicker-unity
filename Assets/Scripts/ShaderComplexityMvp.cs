@@ -32,8 +32,10 @@ public class ShaderComplexityMvp : MonoBehaviour
         if (keyboard == null) return;
 
         // Overdraw (layer count): W = more layers, S = fewer layers
-        if (keyboard.wKey.wasPressedThisFrame) Set_layer_count(layer_objects.Count + 8);
-        if (keyboard.sKey.wasPressedThisFrame) Set_layer_count(Mathf.Max(1, layer_objects.Count - 8));
+        if (keyboard != null && (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame)){ 
+            Set_layer_count(layer_objects.Count + 8);
+        }
+        
 
         // ALU work (math in fragment): Up/Down arrows
         if (keyboard.upArrowKey.wasPressedThisFrame)   operation_count += 50;

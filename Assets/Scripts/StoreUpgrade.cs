@@ -20,6 +20,8 @@ public class StoreUpgrade : MonoBehaviour
     }
 
     public void ClickAction(){
+        if (AudioController.Instance != null)
+            AudioController.Instance.PlayUpgradeClick();
         
     }
 

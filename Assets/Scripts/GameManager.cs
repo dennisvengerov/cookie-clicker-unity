@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public void ClickAction() {
         count++;
         UpdateUI();
+        // Play click SFX (if enabled)
+        if (AudioController.Instance != null)
+            AudioController.Instance.PlayCookieClick();
     }
 
     public void UpdateUI(){
